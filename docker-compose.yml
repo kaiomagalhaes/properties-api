@@ -1,0 +1,25 @@
+version: '2'
+services:
+  db:
+    image: postgres
+    container_name: properties-db
+
+  app:
+    container_name: properties-app
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - .:/share
+
+    ports:
+      - '3000:3000'
+
+    depends_on:
+      - db
+
+    links:
+      - db

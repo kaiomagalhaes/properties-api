@@ -8,6 +8,15 @@ export class Property extends Entity {
   })
   name: string;
 
+  @property({
+    type: 'number',
+  })
+  minRent: number;
+
+  @property({
+    type: 'number',
+  })
+  maxRent: number;
 
   @property({
     id: true,
