@@ -47,7 +47,6 @@ export class PropertiesController {
     })
     property: Omit<Property, 'id'>,
   ): Promise<Property> {
-    console.log('vaca viking', property)
     return this.propertyRepository.create(property);
   }
 
@@ -80,7 +79,7 @@ export class PropertiesController {
   async find(
     @param.query.object('filter', getFilterSchemaFor(Property)) filter?: Filter<Property>,
   ): Promise<Property[]> {
-    return this.propertyRepository.find(filter);
+    return this.propertyRepository.find({ ...filter, include: [{ relation: 'address' }] });
   }
 
   @patch('/properties', {

@@ -16,13 +16,13 @@ export class PropertyRepository extends DefaultCrudRepository<
   constructor(
     @inject('datasources.postgres') dataSource: PostgresDataSource,
     @repository.getter('AddressRepository')
-    getAccountRepository: Getter<AddressRepository>,
+    getAddressRepository: Getter<AddressRepository>,
   ) {
     super(Property, dataSource);
     this.address = this.createHasOneRepositoryFactoryFor(
       'address',
-      getAccountRepository,
+      getAddressRepository,
     );
-
+    this.registerInclusionResolver('address', this.address.inclusionResolver);
   }
 }
