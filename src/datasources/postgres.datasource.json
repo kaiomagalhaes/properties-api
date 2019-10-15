@@ -1,0 +1,10 @@
+{
+  "name": "postgres",
+  "connector": "postgresql",
+  "url": "postgres://postgres:@172.21.0.2:5432/propertiesapi",
+  "host": "",
+  "port": 0,
+  "user": "",
+  "password": "",
+  "database": ""
+}
