@@ -1,4 +1,5 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, hasOne, model, property } from '@loopback/repository';
+import { Address } from './address.model';
 
 @model({ settings: { strict: false } })
 export class Property extends Entity {
@@ -29,8 +30,8 @@ export class Property extends Entity {
   })
   id: number;
 
-
-
+  @hasOne(() => Address)
+  address?: Address;
 
   // Define well-known properties here
 

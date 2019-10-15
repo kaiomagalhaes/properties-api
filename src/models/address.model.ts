@@ -1,4 +1,5 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, belongsTo, model, property } from '@loopback/repository';
+import { Property } from './property.model'
 
 @model({ settings: { strict: false } })
 export class Address extends Entity {
@@ -32,6 +33,9 @@ export class Address extends Entity {
     generated: true,
   })
   id: number;
+
+  @belongsTo(() => Property)
+  propertyId: number;
 
   // Indexer property to allow additional data
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
