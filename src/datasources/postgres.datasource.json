@@ -1,10 +1,5 @@
 {
   "name": "postgres",
   "connector": "postgresql",
-  "url": "postgres://postgres:@172.21.0.2:5432/propertiesapi",
-  "host": "",
-  "port": 0,
-  "user": "",
-  "password": "",
-  "database": ""
+  "url": "postgres://cmykmusyeismzo:93ba1721df08bee8732ad669251348f658b77b6bf56731fc2ed6fa091811044e@ec2-174-129-231-116.compute-1.amazonaws.com:5432/d4tf4b13dcr9mr?ssl=true&sslmode=require"
 }
